@@ -1,0 +1,9 @@
+{
+  "data": [
+    {"latency": 12.0, "download": 5.0, "upload": 1.0, "time": "2020-03-21-11:26:34"},
+    {"latency": 12.0, "download": 5.0, "upload": 1.0, "time": "2020-03-21-11:26:35"},
+    {"latency": 13.0, "download": 6.0, "upload": 1.0, "time": "2020-03-21-11:26:36"},
+    {"latency": 11.0, "download": 7.0, "upload": 1.0, "time": "2020-03-21-11:26:37"},
+    {"latency": 17.0, "download": 5.0, "upload": 1.0, "time": "2020-03-21-11:26:38"}
+  ]
+}
