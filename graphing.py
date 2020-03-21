@@ -14,18 +14,24 @@ latency = [i['latency'] for i in data['data']]
 download = [i['download'] for i in data['data']]
 upload = [i['upload'] for i in data['data']]
 
-plt.plot(dates, latency, label='Latency')
 
-plt.plot(dates, download, label='Download')
+fig, axes = plt.subplots(2, 1)
 
-plt.plot(dates, upload, label='Upload')
+axes[0].set_title('Recorded Speeds')
+axes[0].plot(dates, download)
 
-# Labeling the graph.
-plt.xlabel('Timestamp')
-plt.ylabel('Speed (mpbs)')
+axes[0].plot(dates, upload)
+axes[0].set_ylabel('Speed (Mbps)')
 
-plt.title('Recorded Statistics')
-plt.legend()
 
-# Show the graph
+axes[1].set_title('Recorded Latency')
+axes[1].plot(dates, latency)
+axes[1].set_ylabel('Latency (ms)')
+
+
+#Enable legend titles
+axes[0].legend(['Download', 'Upload'])
+axes[1].legend(['Latency'])
+
+#Generate Visual
 plt.show()
