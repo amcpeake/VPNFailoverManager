@@ -22,7 +22,7 @@ while True:
         i["time"] = str(datetime.now()) # Get time at the manager to account for transmission time
 
     print("Generating graph....", end="")
-    with open('MIB.txt', 'w') as MIB:
+    with open('MIB.txt', 'a') as MIB:
         json.dump(data, MIB)
     graphing.genGraph("MIB.txt")
     print("done")
