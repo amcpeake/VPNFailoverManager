@@ -18,7 +18,7 @@ def poll(fsize = 10): # Optional parameter to manually set filesize for bandwidt
 
         print(f"\t{tun} - Measuring download speed ({fsize} MB file)....")
         start = time.time()
-        runCMD(f"curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test{fsize}.zip --interface {tun} &> /dev/null")
+        runCMD(f"curl -o test.zip http://speedtest.wdc01.softlayer.com/downloads/test{fsize}.zip --interface {tun} &> /dev/null")
         data["download"] = round((fsize * 8) / (time.time() - start), 2) # Use time to download to calc Mbps
 
         print(f"\t{tun} - Measuring upload speed ({fsize} MB file....")
