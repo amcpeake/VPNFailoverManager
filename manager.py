@@ -24,6 +24,7 @@ while True:
     print("Generating graph....", end="")
     with open('MIB.txt', 'a') as MIB:
         json.dump(data, MIB)
+        MIB.write("\n")
     graphing.genGraph("MIB.txt")
     print("done")
 
