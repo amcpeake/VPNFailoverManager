@@ -19,7 +19,7 @@ while True:
     print("Polling agent:")
     data = agent.poll(10)
     for i in data:
-        i["time"] = str(datetime.now()) # Get time at the manager to account for transmission time
+        i["time"] = str(time.strftime("%d/%m %H:%M:%S")) # Get time at the manager to account for transmission time
 
     print("Generating graph....", end="")
     with open('MIB.txt', 'a') as MIB:
@@ -29,4 +29,4 @@ while True:
     print("done")
 
     print("Sleeping...")
-    time.sleep(500)
+    time.sleep(5)
