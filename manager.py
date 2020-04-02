@@ -57,8 +57,8 @@ while True:
     print("Making a decision....", end="")
     tun = pickTun(mib.read(), config)
     if tun is not None:
-        print(f"switching to {tun}")
-        runCMD(f"./scripts/switchTuns.sh {tun}")
+        print(f"switching to {tun}....", end="")
+        agent.setTun(tun)
     else:
         print(f"not switching interface")
     print("done")
