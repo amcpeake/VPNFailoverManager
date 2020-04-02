@@ -6,8 +6,10 @@ def runCMD(cmd): # Run a command and return stdout as a string
     ps = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     return ps.communicate()[0].decode('utf-8')
 
+
 def setTun(tun): # Switch the interface
     runCMD(f"./scripts/switchTuns.sh {tun}")
+
 
 def poll(fsize = 10): # Optional parameter to manually set filesize for bandwidth tests
     tunnels = runCMD("ip link | awk '{print $2}' | grep -oE 'tun[0-9]+'").split("\n")[:-1]
