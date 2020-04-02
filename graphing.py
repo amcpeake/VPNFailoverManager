@@ -3,19 +3,16 @@ import matplotlib.pyplot as plt
 
 
 # Get all data from file.
-def genGraph(file):
-	times = []
-	latency = []
-	download = []
-	upload = []
-	with open(file, 'r') as f:
-		for line in f:
-			print(line)
-			data = json.loads(line)
-			times.extend([i['time'] for i in data])
-			latency.extend([i['latency'] for i in data])
-			download.extend([i['download'] for i in data])
-			upload.extend([i['upload'] for i in data])
+def genGraph(data):
+	tuns = []
+	for tun in data:
+		tuns.append({tun: {
+				"time": list(i["time"] for i in data[tun]),
+				"latency": list(i["latency"] for i in data[tun]),
+				"download": list(i["download"] for i in data[tun]),
+				"upload": list(i["upload"] for i in data[tun])
+			}
+		})
 
 	fig, axes = plt.subplots(2, 1)
 

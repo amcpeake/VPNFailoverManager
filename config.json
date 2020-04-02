@@ -1,0 +1,8 @@
+{
+  "depth": 5,
+  "threshold": 0.15,
+  "delay": 100,
+  "uploadWeight": 0.3,
+  "downloadWeight": 0.5,
+  "latencyWeight": 0.2
+}
