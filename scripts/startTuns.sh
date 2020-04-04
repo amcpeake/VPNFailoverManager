@@ -12,3 +12,5 @@ fi
 for f in "$@"; do
   openvpn --config "$f" --daemon
 done
+sleep 1;
+ps -aux | grep "ovpn --daemon"
