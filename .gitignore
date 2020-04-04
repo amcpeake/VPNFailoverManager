@@ -7,3 +7,4 @@ ifconf.txt
 latency.txt
 rtt.txt
 testData.json
+graphs/graph-tun*.png
