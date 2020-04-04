@@ -31,5 +31,5 @@ def genGraph(data):
     
     # Generate Visual
   # plt.show()
-    plt.savefig(f"Graphs/graph-{tun}.png")
+    plt.savefig(f"graphs/graph-{tun}.png")
     
