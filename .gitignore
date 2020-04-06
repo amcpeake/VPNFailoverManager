@@ -1,10 +1,4 @@
 __pycache__/*
 test.zip
 *.ovpn
-MIB.txt
-graph.png
-ifconf.txt
-latency.txt
-rtt.txt
-testData.json
 graphs/graph-tun*.png
