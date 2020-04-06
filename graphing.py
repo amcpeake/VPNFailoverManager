@@ -4,18 +4,17 @@ import matplotlib.pyplot as plt
 def genGraph(data):
   for tun in data:
     print(f"\nGraphing Tunnel {tun}....")
-    time = list(i["time"] for i in data[tun])
-    latency = list(i["latency"] for i in data[tun])
-    download = list(i["download"] for i in data[tun])
-    upload = list(i["upload"] for i in data[tun])
+    time = list(i["time"] for i in data[tun])[::-1]
+    latency = list(i["latency"] for i in data[tun])[::-1]
+    download = list(i["download"] for i in data[tun])[::-1]
+    upload = list(i["upload"] for i in data[tun])[::-1]
 
-    fig, axes = plt.subplots(2, 1)
-    # fig, axes = plt.subplots(figsize=(12,8))
-    # reduce the number of x ticks. Not working
-    # axes.locator_params(nbins=5)
+    fig, axes = plt.subplots(2, 1, figsize=(12, 8))
+
     fig.suptitle(f"Recorded Stats: {tun}")
     fig.tight_layout(pad=5.0)
-    
+
+    # Add data to graphs
     axes[0].set_title('Speeds')
     axes[0].plot(time, download)
     axes[0].plot(time, upload)
@@ -30,6 +29,6 @@ def genGraph(data):
     axes[1].legend(['Latency'])
     
     # Generate Visual
-  # plt.show()
+    axes[0].xaxis.set_major_locator(plt.MaxNLocator(5))
+    axes[1].xaxis.set_major_locator(plt.MaxNLocator(5))
     plt.savefig(f"graphs/graph-{tun}.png")
-    

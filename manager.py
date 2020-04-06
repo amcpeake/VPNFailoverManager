@@ -42,7 +42,7 @@ while True:
     print("Polling agent:")
     data = agent.poll(10)
     for tun in data:
-        tun.update({"time": str(time.strftime("%d/%m %H:%M:%S"))}) # Append time here to account for transmission time
+        tun.update({"time": str(time.strftime("%m/%d %H:%M:%S"))}) # Append time here to account for transmission time
         if tun["int"] in mib.read():
             lis = mib.read(tun["int"])
         else:
