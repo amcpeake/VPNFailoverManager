@@ -3,10 +3,9 @@ VPNFailoverManager is a series of python scripts that loosely mirror SNMP's mana
 
 A manager script "polls" the agent for information about its current VPN connections (latency, and bandwidth) at a given interval. The manager then uses that data to inform the agent whether or not it has a better VPN connection available, at which point the agent will change its active connection.
 
-## TODO:
-* Split produced graph to display info for multiple (two) tunnels
-* Add parameter to manager for sleep interval
+Note: Polling measurements are done in sequence. This is because, for testing purposes, VPN tunnels (virtual interfaces) are used over a single physical interface. If the VPN tunnels were measured in parallel, measuring one tunnel would influence the measurements of another.
 
+If using physical NICs, measuring in parallel would be preferable for efficiency.
 
 ## JSON Files
 ### Config
